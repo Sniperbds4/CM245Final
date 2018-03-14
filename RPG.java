@@ -10,7 +10,13 @@ import java.util.*;
 public class RPG {
     static Scanner scan = new Scanner(System.in);
     static Random rand = new Random();
-    static dice die = new dice();
+    //static dice die = new dice();
+    static Dice4 d4 = new Dice4();
+    static Dice6 d6 = new Dice6();
+    static Dice8 d8 = new Dice8();
+    static Dice10 d10=new Dice10();
+    static Dice12 d12=new Dice12();
+    static Dice20 d20=new Dice20();
     public static String playerName;
     public static int playerhp;
     public static int maxhp;
