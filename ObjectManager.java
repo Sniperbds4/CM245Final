@@ -8,7 +8,7 @@ import server.model.players.Client;
 import server.Server;
 
 /**
- * @author Sanity
+ * @author Bryce Rush
  */
 
 public class ObjectManager {
