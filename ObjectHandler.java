@@ -14,7 +14,7 @@ import server.model.players.Player;
 import server.util.Misc;
 
 /**
- * @author Sanity
+ * @author Bryce Rush
  */
 
 public class ObjectHandler {
