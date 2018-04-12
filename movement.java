@@ -12,8 +12,9 @@ public class movement {
     //Coords go from 1-5 for positioning reasons.
     
     public void moveUp(){
-        if (xCoord == 3){
-            
+        if (xCoord == 3 && yCoord == 5){
+            changeRoom(0, 1);
+            return;
         }
             
         if (yCoord > 4)
@@ -23,6 +24,11 @@ public class movement {
     }
     
     public void moveDown(){
+        if (xCoord == 3 && yCoord == 1){
+            changeRoom(0, -1);
+            return;
+        }
+        
         if (yCoord < 2)
             return;
         else
@@ -30,6 +36,11 @@ public class movement {
     }
     
     public void moveRight(){
+        if (xCoord == 5 && yCoord == 3){
+            changeRoom(1, 0);
+            return;
+        }
+        
         if (xCoord > 4)
             return;
         else
@@ -37,6 +48,11 @@ public class movement {
     }
     
     public void moveLeft(){
+        if (xCoord == 1 && yCoord == 3){
+            changeRoom(-1, 0);
+            return;
+        }
+        
         if (xCoord < 2)
             return;
         else
