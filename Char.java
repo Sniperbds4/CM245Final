@@ -12,6 +12,7 @@ package javaapplication3;
 public class Char {
         int currentHealth = 20;
         int maxHealth = 20;
+        int wpnDmg = 1
         int critical = 10;
         int missRate = 1;
         
@@ -27,6 +28,13 @@ public class Char {
         }
         public int setMaxHealth(int value){
             return this.maxHealth = value;
+        }
+        
+        public int getWpnDmg(){
+                return this.wpnDmg;
+        }
+        public int setWpnDmg(int value){
+                return this.wpnDmg = value;
         }
         
         public int getCritical(){
