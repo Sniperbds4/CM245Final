@@ -63,12 +63,12 @@ final public JPanel panel = new JPanel();
     
         case 38: // Down Arrow Key
             switch(x){
-            case 0: x=2;
-            break;
-            case 1: x=0;
-            break;
-            case 2: x=1;
-            break;}
+                case 0: x=2;
+                break;
+                case 1: x=0;
+                break;
+                case 2: x=1;
+                break;}
             
     pointer.setBounds(1200-(size.width),(20+((Math.abs(x)%3)*120)+(800-sizeoptions.height)),size.width,size.height);
     panel.repaint();
@@ -77,15 +77,15 @@ final public JPanel panel = new JPanel();
         case 10://Enter Key
             textbox.append("Turn "+turncount+": ");
             switch(x){
-            case 0:            
-            textbox.append("You Attack the silly monster!");
-            break;
-            case 1:           
-            textbox.append("Is that a sword in your pocket or are you happy to see me? Wait...its not a sword.....oh...");
-            break;
-            case 2:             
-            textbox.append("Fleeing is for pussies! Get the fuck back in there and die like a man!");
-            break;}
+                case 0:            
+                textbox.append("You Attack the silly monster!");
+                break;
+                case 1:           
+                textbox.append("Is that a sword in your pocket or are you happy to see me? Wait...its not a sword.....oh...");
+                break;
+                case 2:             
+                textbox.append("Fleeing is for pussies! Get the fuck back in there and die like a man!");
+                break;}
     //Newline character between text outputs
     textbox.append(System.lineSeparator());
     //check for the content of the textbox before repaint is called
