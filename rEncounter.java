@@ -2,23 +2,40 @@ package finalProject;
 
 /**
  * Random Encounter Creator
+ *
  * @author Colton
  */
 import java.util.Random;
 
-public class rEncounter{
+public class rEncounter {
+
     private int encStr = 1;
     private int index = 0;
-    
-    public boolean ranEncounter(){
-        Random rand = new Random;
+
+    public boolean ranEncounter(int x, int y) {
+        Random rand = new Random();
         index = rand.nextInt(10) + 1;
-        
-        if (index >= encStr)
+
+        if (x > 3 && x < 7 && y < 4) {
+            return false;
+        } else if (x < 1) {
+            return false;
+        } else if (x > 9) {
+            return false;
+        } else if (y < 1) {
+            return false;
+        } else if (index >= encStr && x > 0 && x < 4) {
             encStr++;
-            return;
-        else{
-            //create enemy
+            return false;
+        } else if (index >= encStr && x > 10 && x < 6) {
+            encStr++;
+            return false;
+        } else if (index >= encStr && y > 3 && y < 7) {
+            encStr++;
+            return false;
+        } else {
+            return true;
         }
+
     }
- }
+}
