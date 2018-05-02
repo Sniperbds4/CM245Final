@@ -1,3 +1,5 @@
+package FinalProject;
+
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -5,11 +7,16 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.text.DefaultCaret;
 
-/**
- *
- * @author Dustin Mulligan
- */
-public class CombatPanel extends JPanel {
+/* To do list:
+1. Setup relevant getters and setters
+2. Setup constructor paramenters involving passing in character class and monster class
+2.5 Item selection panel pop up on selection then calls relevant getters and setters
+3. Write actual combat handling rather than pointless textbox output (This one depends on if randall has a seperate class or not)
+4. Healthbar graphics
+5. Decide better layout
+6. Replace placeholder graphics with real graphics
+*/
+public class CombatPanel {
 private static int x = 0;
 private static int turncount = 1;    
 final public JPanel panel = new JPanel();
@@ -28,6 +35,7 @@ final public JPanel panel = new JPanel();
     panel.add(options);
     panel.add(scrollbox);
     //get dimensions to set relative locations
+    panel.setBounds(0,0,1200,800);
     Dimension characterdim = character.getPreferredSize();
     character.setBounds(50,50,characterdim.width,characterdim.height);
     Dimension sizeoptions = options.getPreferredSize();
@@ -77,15 +85,15 @@ final public JPanel panel = new JPanel();
         case 10://Enter Key
             textbox.append("Turn "+turncount+": ");
             switch(x){
-                case 0:            
-                textbox.append("You Attack the silly monster!");
-                break;
-                case 1:           
-                textbox.append("Is that a sword in your pocket or are you happy to see me? Wait...its not a sword.....oh...");
-                break;
-                case 2:             
-                textbox.append("Fleeing is for pussies! Get the fuck back in there and die like a man!");
-                break;}
+            case 0:            
+            textbox.append("You Attack the silly monster!");
+            break;
+            case 1:           
+            textbox.append("Is that a sword in your pocket or are you happy to see me? Wait...its not a sword.....oh...");
+            break;
+            case 2:             
+            textbox.append("Fleeing is for pussies! Get the fuck back in there and die like a man!");
+            break;}
     //Newline character between text outputs
     textbox.append(System.lineSeparator());
     //check for the content of the textbox before repaint is called
