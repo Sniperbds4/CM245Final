@@ -11,8 +11,8 @@ package FinalProject;
  */
 public class Enemy {
 
-    private static int hp;
-    private static int dmg;
+    private int hp;
+    private int dmg;
     private int miss;
     private int crit;
 
@@ -31,35 +31,35 @@ public class Enemy {
                 dmg = 5;
                 break;
         }
-        miss=1;
-        crit=10;
+        miss = 1;
+        crit = 10;
     }
 
     /**
      * @return the hp
      */
-    public static int getEnemyhp() {
+    public int getHp() {
         return hp;
     }
 
     /**
      * @return the dmg
      */
-    public static int getEnemymeleedmg() {
+    public int getDmg() {
         return dmg;
     }
 
     /**
      * @param aEnemyhp the hp to set
      */
-    public static void setEnemyhp(int aEnemyhp) {
-        hp = hp-aEnemyhp;
+    public void setHp(int aEnemyhp) {
+        hp = hp - aEnemyhp;
     }
 
     /**
      * @param aEnemymeleedmg the dmg to set
      */
-    public static void setEnemymeleedmg(int aEnemymeleedmg) {
+    public void setDmg(int aEnemymeleedmg) {
         dmg = aEnemymeleedmg;
     }
 
