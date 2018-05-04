@@ -134,7 +134,12 @@ public class CombatPanel {
                                 break;
                             case 1:
                                 textbox.append("Your pockets are empty!");
-                                textbox.append("\n  You were attacked for _!");
+                                dmg=bat.eAttack();
+                                if(dmg<0){
+                                    String[] yes = new String[2];
+                                    DeathTester.main(yes);
+                                }
+                                textbox.append("\n  You were attacked for "+dmg+"!");
                                 break;
                             case 2:
                                 textbox.append("Fleeing isnt allowed!");
