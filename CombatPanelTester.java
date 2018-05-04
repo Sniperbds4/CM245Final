@@ -1,3 +1,5 @@
+package cm245.master;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 /*
@@ -11,17 +13,21 @@ import javax.swing.*;
  * @author Dustin Mulligan
  */
 public class CombatPanelTester {
+    private static JFrame frame = new JFrame();
     public static void main(String args[]){
-    JPanel panel = new JPanel();
-    CombatPanel test = new CombatPanel();
-    JFrame frame = new JFrame();
+    CombatPanel test= new CombatPanel();
     frame.add(test.panel);
-    frame.setSize(1200,800);
+    frame.setSize(1216,838);
     frame.setVisible(true);
     frame.setResizable(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
     test.panel.requestFocus();
-    }
     
+    }
+    public static void close(){
+    frame.dispose();
+        
+        
+    }
 }
