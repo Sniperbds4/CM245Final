@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FinalProject;
+package cm245.master;
 
 import java.util.Random;
 
@@ -12,7 +12,6 @@ import java.util.Random;
  * @author Capiton
  */
 public class Combat {
-
     private boolean fighting;
     private int area;
     private int pHP;
@@ -24,7 +23,6 @@ public class Combat {
     private int eMiss;
     private int eCrit;
     
-
     public Combat() {
     }
 
@@ -62,37 +60,58 @@ public class Combat {
         this.pMiss = c.getMiss();
         this.pCrit = c.getCrit();
         this.fighting = true;
+        
     }
-
+    
+    public int pAttack(){
+        int dmg= pDMG * damageMod(eMiss, pCrit);
+        eHP=-dmg;
+        CombatandoverworldTester.c.setPlayerhp(eHP);
+        if(eHP>0){
+            return dmg;
+        }
+        else {
+            return -1;
+        }
+        
+    }
+    public int eAttack(){
+        int dmg=eDMG * damageMod(pMiss, eCrit);
+        pHP=-dmg;
+        if (pHP >0){
+        return dmg;
+        }
+        else 
+            return -1;
+    }
     public boolean Attack() throws Exception {
-        eHP =-pDMG * damageMod(eMiss, pCrit);
+        eHP = -pDMG * damageMod(eMiss, pCrit);
         if (eHP <= 0) {
             return false;
-        } 
-        pHP=-eDMG*damageMod(pMiss,eCrit);
-        if(pHP<=0){
-            throw new Exception ("You have died. Wish you were better at this.");
         }
-        else{
+        pHP = -eDMG * damageMod(pMiss, eCrit);
+        if (pHP <= 0) {
+            throw new Exception("You have died. Wish you were better at this.");
+        } else {
             //c.setPlayerhp(pHP);
             return true;
         }
     }
-    
-    public boolean Item() throws Exception{
+
+    public boolean Item() throws Exception {
         System.out.print("You can't use items.");
-        pHP=-eDMG*damageMod(pMiss,eCrit);
-        if(pHP<=0){
-            throw new Exception ("You have died. Wish you were better at this.");
+        pHP = -eDMG * damageMod(pMiss, eCrit);
+        if (pHP <= 0) {
+            throw new Exception("You have died. Wish you were better at this.");
         }
         return true;
     }
-    
-    public boolean Run() throws Exception{
+
+    public boolean Run() throws Exception {
         System.out.print("You can't run from a fight.");
-        pHP=-eDMG*damageMod(pMiss,eCrit);
-        if(pHP<=0){
-            throw new Exception ("You have died. Wish you were better at this.");
+        pHP = -eDMG * damageMod(pMiss, eCrit);
+        if (pHP <= 0) {
+            throw new Exception("You have died. Wish you were better at this.");
         }
         return true;
     }
