@@ -39,11 +39,15 @@ public class music {
             FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(-10);
             clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
         }catch(Exception e){
             e.printStackTrace();
         }
     }
     public void run() {
         playSound(musicFiles.get(currentSongIndex));
+    }
+    public void stop(){
+            clip.stop();
     }
 }
